@@ -28,12 +28,12 @@
     </distributionManagement>
 
     <artifactId>rarible-currency-openapi</artifactId>
-    <groupId>com.rarible.protocol</groupId>
+    <groupId>com.rarible.protocol.currency</groupId>
     <packaging>pom</packaging>
     <version>${revision}</version>
 
     <properties>
-        <revision>1.17.0</revision>
+        <revision>1.18.0</revision>
 
         <openapi.plugin.version>5.1.0</openapi.plugin.version>
         <rarible.codegen.server.version>1.2.0</rarible.codegen.server.version>
@@ -75,22 +75,22 @@
 
             <!-- =========== Currency Protocol-API =========== -->
             <dependency>
-                <groupId>com.rarible.protocol</groupId>
+                <groupId>com.rarible.protocol.currency</groupId>
                 <artifactId>protocol-model-currency</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.rarible.protocol</groupId>
+                <groupId>com.rarible.protocol.currency</groupId>
                 <artifactId>protocol-api-currency</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.rarible.protocol</groupId>
+                <groupId>com.rarible.protocol.currency</groupId>
                 <artifactId>protocol-client-currency</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.rarible.protocol</groupId>
+                <groupId>com.rarible.protocol.currency</groupId>
                 <artifactId>protocol-client-currency-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>

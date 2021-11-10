@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>rarible-currency-openapi</artifactId>
-        <groupId>com.rarible.protocol</groupId>
+        <groupId>com.rarible.protocol.currency</groupId>
         <version>${revision}</version>
     </parent>
 
@@ -23,7 +23,7 @@
             <artifactId>rarible-core-logging</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.rarible.protocol</groupId>
+            <groupId>com.rarible.protocol.currency</groupId>
             <artifactId>protocol-model-currency</artifactId>
         </dependency>
         <dependency>

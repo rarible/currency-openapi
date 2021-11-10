@@ -5,25 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>rarible-currency-openapi</artifactId>
-        <groupId>com.rarible.protocol</groupId>
+        <groupId>com.rarible.protocol.currency</groupId>
         <version>${revision}</version>
     </parent>
 
     <artifactId>protocol-client-currency-starter</artifactId>
     <packaging>jar</packaging>
 
-    <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-    </build>
-
     <dependencies>
         <dependency>
-            <groupId>com.rarible.protocol</groupId>
+            <groupId>com.rarible.protocol.currency</groupId>
             <artifactId>protocol-client-currency</artifactId>
         </dependency>
         <dependency>
