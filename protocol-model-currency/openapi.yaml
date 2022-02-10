@@ -30,6 +30,7 @@ components:
         - POLYGON
         - FLOW
         - TEZOS
+        - SOLANA
 
     CurrencyApiError:
       required:

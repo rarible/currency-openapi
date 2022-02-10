@@ -33,7 +33,7 @@
     <version>${revision}</version>
 
     <properties>
-        <revision>1.19.2</revision>
+        <revision>1.23.0</revision>
 
         <openapi.plugin.version>5.1.0</openapi.plugin.version>
         <rarible.codegen.server.version>1.2.0</rarible.codegen.server.version>
@@ -42,7 +42,7 @@
 
         <codegen.package>com.rarible.protocol.currency.dto</codegen.package>
 
-        <rarible.core.version>2.0.1</rarible.core.version>
+        <rarible.core.version>2.3.3</rarible.core.version>
         <rarible.ethereum.version>1.4.0</rarible.ethereum.version>
     </properties>
 
