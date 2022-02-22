@@ -4,6 +4,7 @@ import com.rarible.core.application.ApplicationEnvironmentInfo
 import com.rarible.protocol.currency.api.client.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.web.reactive.function.client.WebClientCustomizer
 import org.springframework.context.annotation.Bean
@@ -20,8 +21,13 @@ class CurrencyApiClientAutoConfiguration(
 
     @Bean
     @ConditionalOnMissingBean(CurrencyApiServiceUriProvider::class)
-    fun currencyApiServiceUriProvider(): CurrencyApiServiceUriProvider {
-        return SwarmCurrencyApiServiceUriProvider(applicationEnvironmentInfo.name)
+    fun currencyApiServiceUriProvider(
+        @Value("\${rarible.core.client.k8s:false}") k8s: Boolean
+    ): CurrencyApiServiceUriProvider {
+        return if (k8s)
+            K8sCurrencyApiServiceUriProvider()
+        else
+            SwarmCurrencyApiServiceUriProvider(applicationEnvironmentInfo.name)
     }
 
     @Bean
