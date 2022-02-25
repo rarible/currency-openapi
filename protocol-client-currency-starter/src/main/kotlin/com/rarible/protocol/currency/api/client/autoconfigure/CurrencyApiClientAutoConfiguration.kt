@@ -1,7 +1,13 @@
 package com.rarible.protocol.currency.api.client.autoconfigure
 
 import com.rarible.core.application.ApplicationEnvironmentInfo
-import com.rarible.protocol.currency.api.client.*
+import com.rarible.protocol.currency.api.client.CompositeWebClientCustomizer
+import com.rarible.protocol.currency.api.client.CurrencyApiClientFactory
+import com.rarible.protocol.currency.api.client.CurrencyApiServiceUriProvider
+import com.rarible.protocol.currency.api.client.DefaultCurrencyWebClientCustomizer
+import com.rarible.protocol.currency.api.client.K8sCurrencyApiServiceUriProvider
+import com.rarible.protocol.currency.api.client.NoopWebClientCustomizer
+import com.rarible.protocol.currency.api.client.SwarmCurrencyApiServiceUriProvider
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
@@ -22,10 +28,11 @@ class CurrencyApiClientAutoConfiguration(
     @Bean
     @ConditionalOnMissingBean(CurrencyApiServiceUriProvider::class)
     fun currencyApiServiceUriProvider(
-        @Value("\${rarible.core.client.k8s:false}") k8s: Boolean
+        @Value("\${rarible.core.client.k8s:false}") k8s: Boolean,
+        @Value("\${rarible.core.client.k8s.namespace:#{null}}") k8sNamespace: String?
     ): CurrencyApiServiceUriProvider {
         return if (k8s)
-            K8sCurrencyApiServiceUriProvider()
+            K8sCurrencyApiServiceUriProvider(k8sNamespace)
         else
             SwarmCurrencyApiServiceUriProvider(applicationEnvironmentInfo.name)
     }
