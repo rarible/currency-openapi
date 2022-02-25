@@ -29,7 +29,7 @@ class CurrencyApiClientAutoConfiguration(
     @ConditionalOnMissingBean(CurrencyApiServiceUriProvider::class)
     fun currencyApiServiceUriProvider(
         @Value("\${rarible.core.client.k8s:false}") k8s: Boolean,
-        @Value("\${rarible.core.client.k8s.namespace:#{null}}") k8sNamespace: String?
+        @Value("\${rarible.core.client.k8sNamespace:#{null}}") k8sNamespace: String?
     ): CurrencyApiServiceUriProvider {
         return if (k8s)
             K8sCurrencyApiServiceUriProvider(k8sNamespace)
