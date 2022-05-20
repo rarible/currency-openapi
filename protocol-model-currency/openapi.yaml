@@ -5,6 +5,30 @@ paths:
 components:
   schemas:
 
+    Currency:
+      type: object
+      properties:
+        currencyId:
+          type: string
+        address:
+          type: string
+        blockchain:
+          "$ref": "#/components/schemas/Blockchain"
+        alias:
+          type: string
+      required:
+        - currencyId
+        - address
+        - blockchain
+
+    Currencies:
+      type: object
+      properties:
+        currencies:
+          type: array
+          items:
+            $ref: "#/components/schemas/Currency"
+
     CurrencyRate:
       type: object
       required:
