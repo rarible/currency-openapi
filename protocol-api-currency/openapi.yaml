@@ -4,6 +4,25 @@ info:
   version: v0.1
 
 paths:
+  "/v0.1/coins":
+    get:
+      tags:
+        - currency-controller
+      operationId: getAllCurrencies
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Currencies"
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CurrencyApiError"
+
   "/v0.1/rate":
     get:
       tags:
