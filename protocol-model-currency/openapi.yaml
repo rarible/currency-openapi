@@ -55,6 +55,7 @@ components:
         - FLOW
         - TEZOS
         - SOLANA
+        - APTOS
 
     CurrencyApiError:
       required:
