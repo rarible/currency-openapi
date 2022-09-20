@@ -38,8 +38,12 @@ class CurrencyApiClientAutoConfiguration(
 
     @Bean
     @ConditionalOnMissingBean(CurrencyApiClientFactory::class)
-    fun currencyApiClientFactory(currencyApiServiceUriProvider: CurrencyApiServiceUriProvider): CurrencyApiClientFactory {
-        val compositeWebClientCustomizer = CompositeWebClientCustomizer(listOf(DefaultCurrencyWebClientCustomizer(), webClientCustomizer))
+    fun currencyApiClientFactory(
+        @Value("\${rarible.core.client.name:}") clientName: String,
+        currencyApiServiceUriProvider: CurrencyApiServiceUriProvider
+    ): CurrencyApiClientFactory {
+        val customizers = listOf(DefaultCurrencyWebClientCustomizer(clientName), webClientCustomizer)
+        val compositeWebClientCustomizer = CompositeWebClientCustomizer(customizers)
         return CurrencyApiClientFactory(currencyApiServiceUriProvider, compositeWebClientCustomizer)
     }
 }
