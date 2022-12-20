@@ -52,6 +52,7 @@ components:
       enum:
         - ETHEREUM
         - POLYGON
+        - OPTIMISM
         - FLOW
         - TEZOS
         - SOLANA
