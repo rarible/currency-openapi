@@ -58,6 +58,7 @@ components:
         - SOLANA
         - APTOS
         - IMMUTABLEX
+        - MANTLE
 
     CurrencyApiError:
       required:
