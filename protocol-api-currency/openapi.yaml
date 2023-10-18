@@ -33,7 +33,7 @@ paths:
           in: query
           required: true
           schema:
-            "$ref": "#/components/schemas/Blockchain"
+            type: string
         - name: address
           in: query
           required: true

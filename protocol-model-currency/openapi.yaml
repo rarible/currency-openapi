@@ -13,7 +13,7 @@ components:
         address:
           type: string
         blockchain:
-          "$ref": "#/components/schemas/Blockchain"
+          type: string
         alias:
           type: string
       required:
@@ -46,19 +46,6 @@ components:
         date:
           type: string
           format: date-time
-
-    Blockchain:
-      type: string
-      enum:
-        - ETHEREUM
-        - POLYGON
-        - OPTIMISM
-        - FLOW
-        - TEZOS
-        - SOLANA
-        - APTOS
-        - IMMUTABLEX
-        - MANTLE
 
     CurrencyApiError:
       required:
