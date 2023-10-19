@@ -18,6 +18,8 @@ components:
           type: string
         abbreviation:
           type: string
+        rate:
+          $ref: '#/components/schemas/BigDecimal'
       required:
         - currencyId
         - address
