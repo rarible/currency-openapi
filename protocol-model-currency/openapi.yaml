@@ -16,6 +16,10 @@ components:
           type: string
         alias:
           type: string
+        abbreviation:
+          type: string
+        rate:
+          $ref: '#/components/schemas/BigDecimal'
       required:
         - currencyId
         - address
@@ -46,6 +50,8 @@ components:
         date:
           type: string
           format: date-time
+        abbreviation:
+          type: string
 
     CurrencyApiError:
       required:
