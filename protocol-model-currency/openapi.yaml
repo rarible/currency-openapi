@@ -27,6 +27,7 @@ components:
         - currencyId
         - address
         - blockchain
+        - decimals
 
     Currencies:
       type: object
