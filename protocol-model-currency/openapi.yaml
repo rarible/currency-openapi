@@ -18,12 +18,16 @@ components:
           type: string
         abbreviation:
           type: string
+        decimals:
+          type: integer
+          format: int32
         rate:
           $ref: '#/components/schemas/BigDecimal'
       required:
         - currencyId
         - address
         - blockchain
+        - decimals
 
     Currencies:
       type: object
